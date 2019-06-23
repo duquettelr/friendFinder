@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="../data/friends.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h1 class="display-4">Survery Questions</h1>
+                <hr class="my-4">
+                <h4>About You</h4>
+                <h4 class="lead">Name (Required)</h4>
+                <input class="form-control" type="text" placeholder="Default input" id="name">
+                <br>
+                <h4 class="lead">Link to photo image (Required)</h4>
+                <input class="form-control" type="text" placeholder="Default input" id="image">
+                <hr class="my-4">
+                <h4>Question 1</h4>
+                <h4 class="lead">Your mind is always buzzing with unexplored ideas and plans.</h4>
+
+                <select class="custom-select" id="response1" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 2</h4>
+                <h4 class="lead">Generally speaking, you rely more on your experience than your imagination.</h4>
+                <select class="custom-select" id="response2" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 3</h4>
+                <h4 class="lead">You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+                <select class="custom-select" id="response3" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 4</h4>
+                <h4 class="lead">You rarely do something just out of sheer curiosity.</h4>
+                <select class="custom-select" id="response4" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 5</h4>
+                <h4 class="lead">People can rarely upset you.</h4>
+                <select class="custom-select" id="response5" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 6</h4>
+                <h4 class="lead">It is often difficult for you to relate to other people’s feelings.</h4>
+                <select class="custom-select" id="response6" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 7</h4>
+                <h4 class="lead">In a discussion, truth should be more important than people’s sensitivities.
+                </h4>
+                <select class="custom-select" id="response7" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 8</h4>
+                <h4 class="lead">You rarely get carried away by fantasies and ideas.</h4>
+                <select class="custom-select" id="response8" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 9</h4>
+                <h4 class="lead">You think that everyone’s views should be respected regardless of whether they are
+                    supported by facts or not.</h4>
+                <select class="custom-select" id="response9" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+
+                <h4>Question 10</h4>
+                <h4 class="lead">You feel more energetic after spending time with a group of people.</h4>
+                <select class="custom-select" id="response10" id="inputGroupSelect01">
+                    <option selected>Choose...</option>
+                    <option value="1">One (Strongly Disagree)</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                    <option value="2">Four</option>
+                    <option value="3">Five (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="col-md-10">
+                <button type="button" id="surveyResponseButton" class="btn btn-info surveySubmit">Submit</button>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <footer class="links">
+                    <span>API Friends list |</span>
+                    <span>Github Repo</span>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        footer {
+            margin-top: 20px;
+        }
+
+        .btn {
+            margin-top: 20px;
+        }
+
+        .btn .btn-info .surveySubmit {
+            width: 80%;
+        }
+    </style>
+
+    <script>
+
+        // let answers = require("../routing/apiRoutes");
+        $(document).ready(function () {
+
+            let responses = [];
+
+            $("#surveyResponseButton").on("click", function () {
+                console.log("clicked");
+                let name = $(`#name`).val().trim();
+                let image = $(`#image`).val().trim();
+
+                let response1 = $(`#response1`).val();
+                let response2 = $(`#response2`).val();
+                let response3 = $(`#response3`).val();
+                let response4 = $(`#response4`).val();
+                let response5 = $(`#response5`).val();
+                let response6 = $(`#response6`).val();
+                let response7 = $(`#response7`).val();
+                let response8 = $(`#response8`).val();
+                let response9 = $(`#response9`).val();
+                let response10 = $(`#response10`).val();
+
+                let response = {
+                    name: name,
+                    image: image,
+                    response1: response1,
+                    response2: response2,
+                    response3: response3,
+                    response4: response4,
+                    response5: response5,
+                    response6: response6,
+                    response7: response7,
+                    response8: response8,
+                    response9: response9,
+                    response10: response10,
+                }
+
+                responses.push(response);
+            })
+
+            console.log(responses);
+            module.exports = responses;
+
+        });
+    </script>
+
+</body>
+
+</html>
