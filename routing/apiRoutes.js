@@ -19,9 +19,10 @@
 /////////////////////////////////////////API///////////////////////////////////////////////////////
 
 
+const path = require("path");
+// let answers = require("../data/friends");
 
-let answers = require("../data/friends")
-
+var answers = [];
 
 module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
