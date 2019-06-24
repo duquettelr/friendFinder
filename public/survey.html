@@ -184,8 +184,12 @@
             var difference;
             var differenceArray = [];
             apiData.forEach((apiScore) => userData.forEach((userScore) => {
-                Math.abs(difference = apiScore - userScore);
-                differenceArray.push(difference);
+                if (apiScore !== userScore) {
+                    difference = Math.abs(apiScore - userScore);
+
+                    differenceArray.push(difference);
+
+                };
             }
             ));
             return differenceArray.reduce(reducer, 0);
@@ -193,7 +197,7 @@
 
         function findIndexOfMatchingScore(differenceArray) {
             var indexOfMatchingScore = 0;
-            for (var i = 1; i < differenceArray.length; i++) {
+            for (var i = 0; i < differenceArray.length - 1; i++) {
                 if (differenceArray[i] < differenceArray[indexOfMatchingScore]) indexOfMatchingScore = i;
             }
             return indexOfMatchingScore;
@@ -254,7 +258,7 @@
                     console.log('is this undefined' + data[i].scores);
                     console.log('is this undefined' + response.scores);
                     differenceArray.push(findMatch(data[i].scores, response.scores))
-
+                    console.log(differenceArray);
                 });
 
                 // findIndexOfMatchingScore(differenceArray);
