@@ -43,29 +43,34 @@ $("#surveyResponseButton").on("click", function () {
 // console.log(responses);
 // module.exports = responses;
 
+$.get("api/friends", function (data) {
+    data.forEach(element => {
+        name = [response1, response2, response3, response4, response5, response6, response7, response8, response8, response10];
+        console.log(name);
+    });
+})
 
 
+$.get("/api/all", function (data) {
 
-// $.get("/api/all", function (data) {
+    if (data.length !== 0) {
 
-//     if (data.length !== 0) {
+        for (var i = 0; i < data.length; i++) {
 
-//         for (var i = 0; i < data.length; i++) {
+            var row = $("<div>");
+            row.addClass("chirp");
 
-//             var row = $("<div>");
-//             row.addClass("chirp");
+            row.append("<p>" + data[i].author + " chirped.. </p>");
+            row.append("<p>" + data[i].body + "</p>");
+            row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
 
-//             row.append("<p>" + data[i].author + " chirped.. </p>");
-//             row.append("<p>" + data[i].body + "</p>");
-//             row.append("<p>At " + moment(data[i].created_at).format("h:mma on dddd") + "</p>");
+            $("#chirp-area").prepend(row);
 
-//             $("#chirp-area").prepend(row);
+        }
 
-//         }
+    }
 
-//     }
-
-// });
+});
 
 // // When user chirps (clicks addBtn)
 // $("#chirp-submit").on("click", function (event) {

@@ -176,45 +176,96 @@
 
         // let answers = require("../routing/apiRoutes");
 
-        let responses = [];
+        // let responses = [];
+        var match;
+        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+        function findMatch(apiData, userData) {
+            var difference;
+            var differenceArray = [];
+            apiData.forEach((apiScore) => userData.forEach((userScore) => {
+                Math.abs(difference = apiScore - userScore);
+                differenceArray.push(difference);
+            }
+            ));
+            return differenceArray.reduce(reducer, 0);
+        };
+
+        function findIndexOfMatchingScore(differenceArray) {
+            var indexOfMatchingScore = 0;
+            for (var i = 1; i < differenceArray.length; i++) {
+                if (differenceArray[i] < differenceArray[indexOfMatchingScore]) indexOfMatchingScore = i;
+            }
+            return indexOfMatchingScore;
+        };
 
         $("#surveyResponseButton").on("click", function () {
             console.log("clicked");
             let name = $(`#name`).val().trim();
             let image = $(`#image`).val().trim();
-
-            let response1 = $(`#response1`).attr("value");
-            let response2 = $(`#response2`).attr("value");
-            let response3 = $(`#response3`).attr("value");
-            let response4 = $(`#response4`).attr("value");
-            let response5 = $(`#response5`).attr("value");
-            let response6 = $(`#response6`).attr("value");
-            let response7 = $(`#response7`).attr("value");
-            let response8 = $(`#response8`).attr("value");
-            let response9 = $(`#response9`).attr("value");
-            let response10 = $(`#response10`).attr("value");
+            let response1 = $(`#response1`).val();
+            let response2 = $(`#response2`).val();
+            let response3 = $(`#response3`).val();
+            let response4 = $(`#response4`).val();
+            let response5 = $(`#response5`).val();
+            let response6 = $(`#response6`).val();
+            let response7 = $(`#response7`).val();
+            let response8 = $(`#response8`).val();
+            let response9 = $(`#response9`).val();
+            let response10 = $(`#response10`).val();
+            console.log(response1);
 
             let response = {
-                name: name,
-                image: image,
-                response1: response1,
-                response2: response2,
-                response3: response3,
-                response4: response4,
-                response5: response5,
-                response6: response6,
-                response7: response7,
-                response8: response8,
-                response9: response9,
-                response10: response10,
+                "name": name,
+                "image": image,
+                "scores": [response1, response2, response3, response4, response5, response6, response7, response8, response9, response10,]
             }
 
-            responses.push(response);
+            // responses.push(response);
+            console.log("this is the response the user just created");
+            console.log(response);
 
             $.post("/api/friends", response).then(function (data) {
+                console.log("this is the data being pushed to the api");
                 console.log(data);
+
             });
+
+            $.get("api/friends", function (data) {
+
+                // for (i = 0; i < response.scores.length; i++) {
+                //     data.forEach(element => {
+                //         var difference = scores[i] - response.scores[i]
+                //     });
+
+                console.log("this is all the data that is in the api");
+                console.log(data);
+
+                //write a function that looks over all scores arrays in api and compares
+                //to response.scores array and finds the most similar one, then returns the username
+                //of whatever array is most similar
+                let userArray = [];
+                let differenceArray = [];
+
+                data.forEach((element, i) => {
+                    // findMatch(scores, response.scores);
+
+                    userArray.push(name);
+                    console.log('is this undefined' + data[i].scores);
+                    console.log('is this undefined' + response.scores);
+                    differenceArray.push(findMatch(data[i].scores, response.scores))
+
+                });
+
+                // findIndexOfMatchingScore(differenceArray);
+
+                match = userArray[findIndexOfMatchingScore(differenceArray)];
+                console.log("This users match is" + match);
+                alert("This users match is " + match);
+
+            })
         })
+
 
 
 
