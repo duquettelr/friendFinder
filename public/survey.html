@@ -178,7 +178,8 @@
 
         // let responses = [];
         var match;
-        const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        // const reducer = (accumulator, currentValue) => accumulator + currentValue;
+        const arrSum = arr => arr.reduce((a, b) => a + b, 0)
 
         function findMatch(apiData, userData) {
             var difference;
@@ -188,11 +189,11 @@
                     difference = Math.abs(apiScore - userScore);
 
                     differenceArray.push(difference);
-
+                    // console.log("each array before accumulated" + differenceArray);
                 };
             }
             ));
-            return differenceArray.reduce(reducer, 0);
+            return arrSum(differenceArray);
         };
 
         function findIndexOfMatchingScore(differenceArray) {
@@ -254,11 +255,12 @@
                 data.forEach((element, i) => {
                     // findMatch(scores, response.scores);
 
-                    userArray.push(name);
+                    userArray.push(data[i].name);
                     console.log('is this undefined' + data[i].scores);
                     console.log('is this undefined' + response.scores);
                     differenceArray.push(findMatch(data[i].scores, response.scores))
                     console.log(differenceArray);
+                    console.log(userArray);
                 });
 
                 // findIndexOfMatchingScore(differenceArray);
